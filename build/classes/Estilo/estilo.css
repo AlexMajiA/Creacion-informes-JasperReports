@@ -4,10 +4,15 @@
     -fx-font-size: 28px;
 }
 
-#paneTop{
+#paneTop {
     -fx-background-color: #66d35d;
 }
 
 #paneFoot {
     -fx-background-color:  #45a3ca;
+}
+
+.button {
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 22px;
 }
