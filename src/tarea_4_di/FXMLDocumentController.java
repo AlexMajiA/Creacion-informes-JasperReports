@@ -7,6 +7,7 @@ package tarea_4_di;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,6 +27,17 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
+
+    @FXML
+    private void salirBt (ActionEvent event){
+        Platform.exit();
+    }
+    
+      @FXML
+    private void matriculaBt (ActionEvent event){
+        
+    }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

@@ -1,0 +1,13 @@
+
+
+.pane {
+    -fx-font-size: 28px;
+}
+
+#paneTop{
+    -fx-background-color: #66d35d;
+}
+
+#paneFoot {
+    -fx-background-color:  #45a3ca;
+}
