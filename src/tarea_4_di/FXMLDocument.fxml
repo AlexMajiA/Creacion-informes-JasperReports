@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,22 +8,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea_4_di.FXMLDocumentController">
+<VBox prefHeight="494.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea_4_di.FXMLDocumentController">
    <children>
-      <Pane fx:id="paneTop" layoutX="14.0" layoutY="14.0" prefHeight="164.0" prefWidth="383.0">
+      <!-- Pane para el título -->
+      <VBox fx:id="paneTop" alignment="CENTER" prefHeight="164.0" prefWidth="383.0">
          <children>
-            <Label layoutX="38.0" layoutY="44.0" prefHeight="56.0" prefWidth="311.0" text="Generador de informes">
+            <Label text="Generador de informes">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
          </children>
-      </Pane>
-      <Pane fx:id="paneFoot" layoutX="14.0" layoutY="176.0" prefHeight="301.0" prefWidth="383.0">
+      </VBox>
+      
+      <!-- Pane para los botones -->
+      <VBox fx:id="paneFoot" alignment="CENTER" prefHeight="321.0" prefWidth="405.0" spacing="10.0">
          <children>
-            <Button layoutX="51.0" layoutY="58.0" mnemonicParsing="false" onAction="#matriculaBt" prefHeight="45.0" prefWidth="282.0" text="Matriculados en DI" />
-            <Button layoutX="127.0" layoutY="128.0" mnemonicParsing="false" onAction="#salirBt" prefHeight="45.0" prefWidth="130.0" text="Salir" />
+            <Button mnemonicParsing="false" onAction="#matriculaBt" prefHeight="45.0" prefWidth="282.0" text="Matriculados en DI">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#salirBt" prefHeight="45.0" prefWidth="130.0" text="Salir" />
          </children>
-      </Pane>
+      </VBox>
    </children>
-</AnchorPane>
+</VBox>

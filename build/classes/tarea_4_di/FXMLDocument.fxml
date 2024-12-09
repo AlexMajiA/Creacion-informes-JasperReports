@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,22 +8,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea_4_di.FXMLDocumentController" prefHeight="494.0" prefWidth="405.0">
+<VBox prefHeight="494.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tarea_4_di.FXMLDocumentController">
    <children>
       <!-- Pane para el título -->
-      <VBox fx:id="paneTop" prefHeight="164.0" prefWidth="383.0" alignment="CENTER">
-         <Label text="Generador de informes">
-            <font>
-               <Font name="System Bold" size="27.0" />
-            </font>
-         </Label>
+      <VBox fx:id="paneTop" alignment="CENTER" prefHeight="164.0" prefWidth="383.0">
+         <children>
+            <Label text="Generador de informes">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+         </children>
       </VBox>
       
       <!-- Pane para los botones -->
-      <VBox fx:id="paneFoot" spacing="10.0" alignment="CENTER">
-         <Button mnemonicParsing="false" onAction="#matriculaBt" prefHeight="45.0" prefWidth="282.0" text="Matriculados en DI" />
-         <Button mnemonicParsing="false" onAction="#salirBt" prefHeight="45.0" prefWidth="130.0" text="Salir" />
+      <VBox fx:id="paneFoot" alignment="CENTER" prefHeight="321.0" prefWidth="405.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#matriculaBt" prefHeight="45.0" prefWidth="282.0" text="Matriculados en DI">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#salirBt" prefHeight="45.0" prefWidth="130.0" text="Salir" />
+         </children>
       </VBox>
    </children>
 </VBox>
-
