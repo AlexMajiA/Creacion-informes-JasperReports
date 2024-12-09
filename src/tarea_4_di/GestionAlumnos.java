@@ -11,16 +11,4 @@ package tarea_4_di;
  */
 public class GestionAlumnos {
     
-    //Declaro las variables.
-    private String dni;
-    private String siglasDeModulo;
-    private double notaModulo;
-    private String provincia;
-    
-    
-    //Construyo el Array list simulando una base de datos no relacional.
-    
-    
-    
-    
 }
