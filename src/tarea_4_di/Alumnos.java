@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package tarea_4_di;
 
-import java.util.ArrayList;
+package tarea_4_di;
 
 /**
  *
@@ -29,15 +23,42 @@ public class Alumnos {
         this.notaModulo = notaModulo;
         this.provincia = provincia;
     }
-    
-    
-    
-    public void guardar(){
-        
-        ArrayList <Alumnos> BD = new ArrayList<>();    
-        BD.add(this);
-        
+
+    public String getDni() {
+        return dni;
     }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getSiglasDeModulo() {
+        return siglasDeModulo;
+    }
+
+    public void setSiglasDeModulo(String siglasDeModulo) {
+        this.siglasDeModulo = siglasDeModulo;
+    }
+
+    public double getNotaModulo() {
+        return notaModulo;
+    }
+
+    public void setNotaModulo(double notaModulo) {
+        this.notaModulo = notaModulo;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+    
+    
+    
+    
     
     
     
