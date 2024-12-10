@@ -6,6 +6,7 @@
 package tarea_4_di;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -48,5 +49,10 @@ public class GestionAlumnos {
 
         return BD;
     }
+    
+    public List <Alumnos> datosInforme(){
+        return crearAlumno();
+    }
+    
 
 }

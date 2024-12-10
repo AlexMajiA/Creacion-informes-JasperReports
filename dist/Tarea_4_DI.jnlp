@@ -8,7 +8,17 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Tarea_4_DI.jar" size="3749" download="eager" />
+    <jar href="Tarea_4_DI.jar" size="6556" download="eager" />
+    <jar href="lib\JasperViewerFX.jar" size="7917003" download="eager" />
+    <jar href="lib\commons-beanutils-1.9.3.jar" size="246174" download="eager" />
+    <jar href="lib\commons-collections-3.2.2.jar" size="588337" download="eager" />
+    <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />
+    <jar href="lib\commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="lib\jasperreports-6.7.0.jar" size="5528257" download="eager" />
+    <jar href="lib\jasperreports-fonts-6.7.0.jar" size="2478074" download="eager" />
+    <jar href="lib\jasperreports-javaflow-6.7.0.jar" size="5537261" download="eager" />
+    <jar href="lib\jcommon-1.0.8.jar" size="310890" download="eager" />
+    <jar href="lib\jfreechart-1.0.19.jar" size="1570157" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Tarea_4_DI" >
     <param name="requiredFXVersion" value="8.0+"/>

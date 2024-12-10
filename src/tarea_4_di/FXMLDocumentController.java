@@ -1,8 +1,10 @@
 package tarea_4_di;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,11 +36,27 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void matriculaBt(ActionEvent event) {
-        // Implementar acción
+        //Obtengo todos los alumnos de la base de datos.
+        GestionAlumnos gestion = new GestionAlumnos();
+        List <Alumnos> datos = gestion.datosInforme();
+        
+        //Muestro primero los datos por consola.
+        System.out.println("Infome de alumnos: ");
+        
+        for(Alumnos alumno : datos  ){
+            System.out.println(
+                "DNI: " + alumno.getDni() + "\t"+
+                "Modulo: " + alumno.getSiglasDeModulo() +"\t"+
+                "Nota del modulo: " + alumno.getNotaModulo() +"\t"+
+                "Provincia: " + alumno.getProvincia());
+        }
+        
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        //ObservableList
     }    
 }
