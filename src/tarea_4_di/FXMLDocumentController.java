@@ -19,40 +19,42 @@ import org.fxutils.viewer.JasperViewerFX;
 public class FXMLDocumentController implements Initializable {
 
     @FXML
-    private VBox root; //VBox, la raíz de la interfaz
-    private Scene scene;
+    private VBox root; // VBox que actúa como el contenedor raíz de la interfaz.
+    private Scene scene; // Escena asociada a la interfaz.
 
     @FXML
     private void estilo() {
+        // Limpia las hojas de estilo actuales y aplica la nueva hoja de estilo CSS.
         scene.getStylesheets().clear();
         scene.getStylesheets().add(getClass().getResource("/Estilo/estilo.css").toExternalForm());
     }
 
     @FXML
-    private VBox paneTop;
+    private VBox paneTop; // VBox correspondiente a la sección superior de la interfaz.
 
     @FXML
-    private VBox paneFoot;
+    private VBox paneFoot; // VBox correspondiente a la sección inferior de la interfaz.
 
     @FXML
     private void salirBt(ActionEvent event) {
+        // Finaliza la aplicación cuando se presiona el botón asociado.
         Platform.exit();
     }
 
     @FXML
     private void matriculaBt(ActionEvent event) {
-        //Obtengo todos los alumnos de la base de datos.
+        // Obtiene los datos de todos los alumnos desde la base de datos.
         GestionAlumnos gestion = new GestionAlumnos();
         List<Alumnos> datos = gestion.datosInforme();
 
-        // Crear una lista para almacenar solo los alumnos de "DI".
+        // Filtra los alumnos que están inscritos en el módulo "DI".
         List<Alumnos> alumnosDI = new ArrayList<>();
-
         for (Alumnos alumno : datos) {
             if ("DI".equals(alumno.getSiglasDeModulo())) {
                 alumnosDI.add(alumno);
-                //Muestro primero los datos por consola.
-                System.out.println("Infome de alumnos: ");
+
+                // Muestra los datos de los alumnos seleccionados en la consola.
+                System.out.println("Informe de alumnos: ");
                 System.out.println(
                         "DNI: " + alumno.getDni() + "\t"
                         + "Modulo: " + alumno.getSiglasDeModulo() + "\t"
@@ -60,71 +62,28 @@ public class FXMLDocumentController implements Initializable {
                         + "Provincia: " + alumno.getProvincia());
             }
         }
-              try{
-             //Defino la colección de datos sobre la que se crea el informe.
-        JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(alumnosDI);
-        
-        Node source = (Node) event.getSource();
-        
-        Stage stage = (Stage) source.getScene().getWindow();
-        
-       JasperViewerFX viewerfx = new JasperViewerFX(stage,"Informe de Alumnos","/Informes/Informe_2_1.jasper",new HashMap<>(),beanColDataSource);
-        
-        viewerfx.show();
-        
-        }catch (Exception ex){
-            System.out.println("Error." + ex.getMessage());
-        }
-         
-/*
-        try {
-            System.out.println("Verificando alumnosDI...");
-            if (alumnosDI == null) {
-                throw new NullPointerException("La lista 'alumnosDI' es null.");
-            }
 
+        try {
+            // Define la fuente de datos para el informe utilizando la lista de alumnos filtrada.
             JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(alumnosDI);
 
-            System.out.println("Verificando evento...");
-            if (event == null) {
-                throw new NullPointerException("El objeto 'event' es null.");
-            }
-
+            // Obtiene el escenario actual a partir del evento.
             Node source = (Node) event.getSource();
-            System.out.println("Verificando nodo fuente...");
-            if (source == null) {
-                throw new NullPointerException("El nodo 'source' es null.");
-            }
-
             Stage stage = (Stage) source.getScene().getWindow();
-            System.out.println("Verificando stage...");
-            if (stage == null) {
-                throw new NullPointerException("El 'stage' es null.");
-            }
 
-            
-            
-            System.out.println("Verificando JasperViewerFX...");
-            JasperViewerFX viewerfx = new JasperViewerFX(stage, "Informe de Alumnos", "/Informes/Informe_2.jasper", new HashMap<>(), beanColDataSource);
-
+            // Crea y muestra el visor del informe Jasper.
+            JasperViewerFX viewerfx = new JasperViewerFX(stage, "Informe de Alumnos", "/Informes/Informe_2_1.jasper", new HashMap<>(), beanColDataSource);
             viewerfx.show();
-            
-            String reportPath = getClass().getResource("/informes/Informe_2.jasper").toString();
-            System.out.println("Ruta del informe: " + reportPath);
-            
-        } catch (NullPointerException ex) {
-            System.out.println("Error de valor null: " + ex.getMessage());
-            ex.printStackTrace(); // Imprime la traza completa del error
+
         } catch (Exception ex) {
-            System.out.println("Error general: " + ex.getMessage());
-            ex.printStackTrace();
+            // Captura y muestra cualquier error ocurrido durante la generación del informe.
+            System.out.println("Error: " + ex.getMessage());
         }
-     */   
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
 
     }
 }
+

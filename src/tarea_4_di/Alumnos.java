@@ -24,6 +24,8 @@ public class Alumnos {
         this.provincia = provincia;
     }
 
+    
+    //Setter y Getter.
     public String getDni() {
         return dni;
     }
@@ -55,11 +57,5 @@ public class Alumnos {
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
-    
-    
-    
-    
-    
-    
     
 }

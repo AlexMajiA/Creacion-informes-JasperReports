@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tarea_4_di;
 
 import java.util.ArrayList;
@@ -15,14 +10,15 @@ import java.util.List;
 public class GestionAlumnos {
 
     Alumnos alumno = new Alumnos();
-
+    
+    //Array que simula basde de datos no relacional.
     public static ArrayList<Alumnos> crearAlumno() {
         ArrayList<Alumnos> BD = new ArrayList<>();
 
         BD.add(new Alumnos("75139418M", "DI", 8.5, "GRANADA"));
         BD.add(new Alumnos("15221662S", "DI", 6.2, "MALAGA"));
         BD.add(new Alumnos("68713555F", "DI", 5.8, "JAÉN"));
-        BD.add(new Alumnos("41668219W", "DI", 6.9, "CÓRODOBA"));
+  //      BD.add(new Alumnos("41668219W", "DI", 6.9, "CÓRODOBA"));
         BD.add(new Alumnos("72345565S", "DI", 8.3, "CÁDIZ"));
         BD.add(new Alumnos("35799524Y", "DI", 9.1, "ALMERIA"));
         BD.add(new Alumnos("87765691J", "DI", 7.4, "CÁDIZ"));
