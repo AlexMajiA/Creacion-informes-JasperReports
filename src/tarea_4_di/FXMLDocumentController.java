@@ -68,7 +68,7 @@ public class FXMLDocumentController implements Initializable {
         
         Stage stage = (Stage) source.getScene().getWindow();
         
-       JasperViewerFX viewerfx = new JasperViewerFX(stage,"Informe de Alumnos","/Informes/Informe_2.jasper",new HashMap<>(),beanColDataSource);
+       JasperViewerFX viewerfx = new JasperViewerFX(stage,"Informe de Alumnos","/Informes/Informe_2_1.jasper",new HashMap<>(),beanColDataSource);
         
         viewerfx.show();
         
