@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Informe_2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5cad6dbc-1e2e-4ea5-a310-f4377ff96103">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dni" class="java.lang.String"/>
+	<field name="siglasDeModulo" class="java.lang.String"/>
+	<field name="notaModulo" class="java.lang.Double"/>
+	<field name="provincia" class="java.lang.String"/>
+	<variable name="provincia1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{provincia}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="69" uuid="338edb3a-6722-47fc-85de-38ec1e1b1d82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Matriculados en DI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="286">
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="30" uuid="d1a0c8c9-fec6-4d47-be7d-071c7de35cc1"/>
+				<textElement textAlignment="Left">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Dni]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="20" width="100" height="30" uuid="f9f5b382-9c66-4c4b-a8c5-94f682f4d4e8"/>
+				<textElement textAlignment="Left">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Modulo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="20" width="100" height="30" uuid="a3427fed-00e8-4748-9369-990b3bf40a9b"/>
+				<textElement textAlignment="Left">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="20" width="100" height="30" uuid="8dc262c6-57ed-4998-8fa8-04df936fabc2"/>
+				<textElement textAlignment="Left">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Provincia]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="60" width="551" height="1" uuid="bf45cc63-dd64-4177-b1cb-0fa34083469e"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="70" width="100" height="30" uuid="382331c8-6a5a-467b-9373-7d58e4106f7d"/>
+				<textFieldExpression><![CDATA[$F{dni}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="70" width="100" height="30" uuid="c3c2da7a-222c-4c93-95b3-908a754e6164"/>
+				<textFieldExpression><![CDATA[$F{siglasDeModulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="70" width="100" height="30" uuid="783effa6-218f-4eb9-860c-535cf443c352"/>
+				<textFieldExpression><![CDATA[$F{provincia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="70" width="100" height="30" uuid="7b58910d-0988-468f-bf74-0b86c36de8a6"/>
+				<textFieldExpression><![CDATA[$V{provincia1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="369" splitType="Stretch"/>
+	</summary>
+</jasperReport>
