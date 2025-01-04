@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Tarea_4_DI.jar" size="22275" download="eager" />
+    <jar href="Tarea_4_DI.jar" size="15297" download="eager" />
     <jar href="lib\JasperViewerFX.jar" size="7917003" download="eager" />
     <jar href="lib\commons-beanutils-1.9.3.jar" size="246174" download="eager" />
     <jar href="lib\commons-collections-3.2.2.jar" size="588337" download="eager" />

@@ -1,5 +1,6 @@
 package tarea_4_di;
 
+import javafx.scene.control.MenuItem;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
@@ -72,7 +74,7 @@ public class FXMLDocumentController implements Initializable {
             Stage stage = (Stage) source.getScene().getWindow();
 
             // Crea y muestra el visor del informe Jasper.
-            JasperViewerFX viewerfx = new JasperViewerFX(stage, "Informe de Alumnos", "/Informes/Informe_2_1.jasper", new HashMap<>(), beanColDataSource);
+            JasperViewerFX viewerfx = new JasperViewerFX(stage, "Informe de Alumnos", "/Informes/Informe_2.jasper", new HashMap<>(), beanColDataSource);
             viewerfx.show();
 
         } catch (Exception ex) {
@@ -80,10 +82,20 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("Error: " + ex.getMessage());
         }
     }
+    
+    @FXML
+    private MenuItem ayuda;
+    
+    @FXML
+    private void ayudaMb(ActionEvent Event){
+        
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        
+        ayuda.setAccelerator(KeyCombination.keyCombination("F1"));
+        ayuda.setOnAction(this::ayudaMb); // Vincula el método ayudaMb al MenuItem.
     }
 }
 

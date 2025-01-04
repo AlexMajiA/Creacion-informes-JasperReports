@@ -8,6 +8,15 @@ import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
 
 public class Tarea_4_DI extends Application {
+    
+    /**
+     * Método que inicia la ventana principal de la palicación
+     * 
+     * @param stage Es la ventana principal creado por la aplicación en si y paso como argumento 
+     * el método start() de la aplicación
+     * @throws Exception El método start() puede lanzar una exepción del tipo Exception si no
+     * se crea la ventana correctamente.
+     */
 
     @Override
     public void start(Stage stage) throws Exception {
