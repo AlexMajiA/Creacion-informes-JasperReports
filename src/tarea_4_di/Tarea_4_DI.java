@@ -39,6 +39,11 @@ public class Tarea_4_DI extends Application {
         stage.show();
     }
 
+    /**
+     * El método main es la entrada a toda la aplicación de Java 
+     * @param args Argumentos pasados por la línea de comandos.
+     */
+    
     public static void main(String[] args) {
         // Método principal que lanza la aplicación JavaFX.
         launch(args);

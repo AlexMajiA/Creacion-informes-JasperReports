@@ -1,3 +1,9 @@
+/**
+ * Archivo: FXMLDocumentController.java
+ * Objetivo: Controlar los eventos relacionados con la ventana principal de a la FXMLDocument.fxml
+ * Equipo/persona: Alejandro Martínez Jiménez
+ * 
+ */
 package tarea_4_di;
 
 import javafx.scene.control.MenuItem;
@@ -18,6 +24,16 @@ import javafx.stage.Stage;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.fxutils.viewer.JasperViewerFX;
 
+    /**
+     * Controlador encargado de la gestión de la ventana principal
+     * <p style ="font-size:18px; color: blue;"> Controlador encargado de la ventana principal </p>
+     * @author Alejandro Martínez Jiménez
+     * @version 1.0.0
+     * @see tarea_4_di.Tarea_4_DI
+     * @since 1.0.0
+     */
+
+
 public class FXMLDocumentController implements Initializable {
 
     @FXML
@@ -30,18 +46,40 @@ public class FXMLDocumentController implements Initializable {
         scene.getStylesheets().clear();
         scene.getStylesheets().add(getClass().getResource("/Estilo/estilo.css").toExternalForm());
     }
+    
+    /**
+     * VBox correspondiente a la sección superior de la interfaz.
+     */
+    @FXML private VBox paneTop; 
+    
+    /**
+     * VBox correspondiente a la sección inferior de la interfaz.
+     */
+    @FXML private VBox paneFoot; 
 
-    @FXML
-    private VBox paneTop; // VBox correspondiente a la sección superior de la interfaz.
-
-    @FXML
-    private VBox paneFoot; // VBox correspondiente a la sección inferior de la interfaz.
-
+    /**
+     * Método para finalizar la ejecución de la aplicación.
+     * 
+     * <p>Este método se invoca cuando el usuario presiona el botón asociado al evento.</p>
+     *
+     * @param event Evento de acción asociado al botón que invoca este método.
+     */
     @FXML
     private void salirBt(ActionEvent event) {
-        // Finaliza la aplicación cuando se presiona el botón asociado.
-        Platform.exit();
+       Platform.exit();
     }
+
+ /**
+ * Maneja el evento para obtener y mostrar los alumnos matriculados en un módulo específico.
+ * 
+ * <p>Este método se activa mediante un evento asociado a un botón. Recupera la lista
+ * completa de alumnos desde la base de datos, filtra los alumnos inscritos en el módulo
+ * con las siglas "DI" y muestra la información filtrada en la consola.</p>
+ * 
+ * <p>Además, se genera un informe utilizando JasperReports con los datos filtrados.</p>
+ * 
+ * @param event Evento de acción que activa la obtención y filtrado de los datos de los alumnos.
+ */
 
     @FXML
     private void matriculaBt(ActionEvent event) {
@@ -83,14 +121,26 @@ public class FXMLDocumentController implements Initializable {
         }
     }
     
+    /**
+     * 
+     */
     @FXML
     private MenuItem ayuda;
     
+    /**
+     * 
+     * @param Event 
+     */
     @FXML
     private void ayudaMb(ActionEvent Event){
         
     }
 
+    /**
+     * 
+     * @param url
+     * @param rb 
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
