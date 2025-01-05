@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -17,7 +18,11 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Ayuda">
                   <items>
-                    <MenuItem fx:id="ayuda" mnemonicParsing="false" onAction="#ayudaMb" text="Manual de ayuda" />
+                    <MenuItem fx:id="ayuda" mnemonicParsing="false" onAction="#ayudaMb" text="Manual de ayuda" >
+                        <accelerator>
+                              <KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                    </MenuItem>
                   </items>
                 </Menu>
               </menus>

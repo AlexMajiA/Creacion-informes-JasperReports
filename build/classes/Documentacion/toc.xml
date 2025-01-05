@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc version="1.0">
+    <tocitem text="Ayuda">
+        <tocitem text="Formularios">
+            <tocitem text="Menú de aplicación" target="menuId"/>
+            <tocitem text="Ventana principal" target="principalId"/>
+        </tocitem>
+    </tocitem>
+</toc>

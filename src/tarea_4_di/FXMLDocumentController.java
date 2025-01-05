@@ -6,6 +6,7 @@
  */
 package tarea_4_di;
 
+import java.io.File;
 import javafx.scene.control.MenuItem;
 import java.net.URL;
 import java.util.ArrayList;
@@ -18,9 +19,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javax.help.HelpBroker;
+import javax.help.HelpSet;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.fxutils.viewer.JasperViewerFX;
 
@@ -67,6 +69,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void salirBt(ActionEvent event) {
        Platform.exit();
+       System.exit(0);
     }
 
  /**
@@ -80,7 +83,6 @@ public class FXMLDocumentController implements Initializable {
  * 
  * @param event Evento de acción que activa la obtención y filtrado de los datos de los alumnos.
  */
-
     @FXML
     private void matriculaBt(ActionEvent event) {
         // Obtiene los datos de todos los alumnos desde la base de datos.
@@ -133,19 +135,46 @@ public class FXMLDocumentController implements Initializable {
      */
     @FXML
     private void ayudaMb(ActionEvent Event){
-        
+        try{
+            
+            /*Lectura de el fichero .hs (help_set.hs). Las tres líneas siguientes hacen eso. */
+          File fichero = new File("src\\documentacion\\help_set.hs"); 
+         
+          URL hsURL = fichero.toURI().toURL();   
+
+          /*La clase HelpSet contiene todos los datos relativos a nuestra 
+            ayuda, leídos de los ficheros de configuración que se crearon 
+            anteriormente*/
+          HelpSet helpset = new HelpSet(getClass().getClassLoader(), hsURL); 
+          
+          /* HelpBroker no es más que una clase de ayuda que nos ofrece JavaHelp
+          para facilitarnos un uso por defecto de la ayuda desde código.
+          Helpbroker nos proporciona una interfaz para manejar todas las
+          ventanas de ayuda(tabla de contenidos, visor de ayuda, panel de 
+          búsqueda, índice), y métodos adecuados para que podamos añadir dichas
+          ventanas a nuestros botones de ayuda o a la pulsación de la tecla
+          de ayuda F1  */
+          HelpBroker hb = helpset.createHelpBroker();   
+          
+          /* Mostramos el sistema de ayuda */  
+          hb.setDisplayed(true); 
+            
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     /**
-     * 
-     * @param url
-     * @param rb 
+     * Método de inicialización de los controladores.
+     * @param url la ubicación utilizada para resolver rutas relativas para el objeto raiz,
+     * o null si no se conoce la ubicación.
+     * @param rb Los recursos utilizados para localizar el objeto raíz, o null si el objeto 
+     * no se localizó
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        ayuda.setAccelerator(KeyCombination.keyCombination("F1"));
-        ayuda.setOnAction(this::ayudaMb); // Vincula el método ayudaMb al MenuItem.
+  
     }
 }
 
